@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="practica2_entregable" nsURI="practica2_entregable" nsPrefix="practica2_entregable">
+  <eClassifiers xsi:type="ecore:EClass" name="Clase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributos" upperBound="-1"
+        eType="#//Atributos" containment="true" eOpposite="#//Atributos/clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relaciones" upperBound="-1"
+        eType="#//Relaciones" eOpposite="#//Relaciones/clase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="padreDe" upperBound="-1"
+        eType="#//Clase" eOpposite="#//Clase/hijoDe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hijoDe" eType="#//Clase"
+        eOpposite="#//Clase/padreDe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelo" lowerBound="1"
+        eType="#//Modelo" eOpposite="#//Modelo/clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinalidad" lowerBound="1"
+        eType="#//Cardinalidad" eOpposite="#//Cardinalidad/clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acompaña" eType="#//Relaciones"
+        eOpposite="#//Relaciones/relacionDe"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atributos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clase" lowerBound="1" eType="#//Clase"
+        eOpposite="#//Clase/atributos"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="atributo" eType="#//TipoAtributo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relaciones">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clase" lowerBound="2" upperBound="2"
+        eType="#//Clase" eOpposite="#//Clase/relaciones"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tipo" eType="#//TipoRelacion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinalidad" lowerBound="2"
+        upperBound="2" eType="#//Cardinalidad" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelo" eType="#//Modelo"
+        eOpposite="#//Modelo/relaciones"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relacionDe" eType="#//Clase"
+        eOpposite="#//Clase/acompaña"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoAtributo">
+    <eLiterals name="REAL"/>
+    <eLiterals name="INTEGER" value="1"/>
+    <eLiterals name="CHAR" value="2"/>
+    <eLiterals name="STRING" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoRelacion">
+    <eLiterals name="Asociacion" value="2"/>
+    <eLiterals name="Agregacion"/>
+    <eLiterals name="Composicion" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cardinalidad">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clase" lowerBound="1" eType="#//Clase"
+        eOpposite="#//Clase/cardinalidad"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rol" upperBound="-1" eType="#//Rol"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rol">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Modelo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clase" upperBound="-1"
+        eType="#//Clase" containment="true" eOpposite="#//Clase/modelo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relaciones" eType="#//Relaciones"
+        containment="true" eOpposite="#//Relaciones/modelo"/>
+  </eClassifiers>
+</ecore:EPackage>

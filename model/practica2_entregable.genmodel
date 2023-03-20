@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/practica2_entregable/src-gen" creationIcons="false"
+    editDirectory="/practica2_entregable.edit/src-gen" editorDirectory="/practica2_entregable.editor/src-gen"
+    modelPluginID="practica2_entregable" modelName="Practica2_entregable" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>practica2_entregable.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Practica2_entregable" disposableProviderFactory="true" ecorePackage="practica2_entregable.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="practica2_entregable.ecore#//TipoAtributo">
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoAtributo/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoAtributo/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoAtributo/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoAtributo/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="practica2_entregable.ecore#//TipoRelacion">
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoRelacion/Asociacion"/>
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoRelacion/Agregacion"/>
+      <genEnumLiterals ecoreEnumLiteral="practica2_entregable.ecore#//TipoRelacion/Composicion"/>
+    </genEnums>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Clase">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/atributos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/relaciones"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Clase/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/padreDe"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/hijoDe"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/modelo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/cardinalidad"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Clase/acompaña"/>
+    </genClasses>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Atributos">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Atributos/clase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Atributos/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Atributos/atributo"/>
+    </genClasses>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Relaciones">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Relaciones/clase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Relaciones/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Relaciones/Tipo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Relaciones/cardinalidad"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Relaciones/modelo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Relaciones/relacionDe"/>
+    </genClasses>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Cardinalidad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Cardinalidad/minimo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Cardinalidad/maximo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Cardinalidad/clase"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Cardinalidad/rol"/>
+    </genClasses>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Rol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute practica2_entregable.ecore#//Rol/nombre"/>
+    </genClasses>
+    <genClasses ecoreClass="practica2_entregable.ecore#//Modelo">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Modelo/clase"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference practica2_entregable.ecore#//Modelo/relaciones"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

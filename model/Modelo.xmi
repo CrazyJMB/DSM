@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<practica2_entregable:Modelo
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:practica2_entregable="practica2_entregable"
+    xsi:schemaLocation="practica2_entregable practica2_entregable.ecore"/>
